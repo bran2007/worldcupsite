@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA World Cup Watch Parties 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #D72B2B;
+    --gold: #F5B800;
+    --dark: #0D0D0D;
+    --dark2: #161616;
+    --dark3: #1F1F1F;
+    --dark4: #2A2A2A;
+    --text: #F0EDE6;
+    --text-muted: #9A9690;
+    --border: rgba(255,255,255,0.08);
+    --card-hover: rgba(245,184,0,0.06);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-cond: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 3rem 1.5rem 5rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(215,43,43,0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(245,184,0,0.10) 0%, transparent 55%),
+      var(--dark);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 860px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(215,43,43,0.15);
+    border: 1px solid rgba(215,43,43,0.4);
+    border-radius: 2px;
+    padding: 6px 18px;
+    font-family: var(--font-cond);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F5B800;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow span.dot { width: 6px; height: 6px; border-radius: 50%; background: #D72B2B; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+    -webkit-text-stroke: 1px var(--gold);
+  }
+  .hero-sub {
+    font-family: var(--font-cond);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; justify-content: center;
+    flex-wrap: wrap; margin-bottom: 3rem;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font-cond);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: #B52222; transform: translateY(-1px); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { font-style: normal; color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-family: var(--font-cond);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-submit {
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font-cond);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-submit:hover { background: #B52222; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-label {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  /* ── FILTERS ── */
+  .filters-bar {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+  }
+  .filters-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+  }
+  .filter-label {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+  .filter-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .chip {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: var(--font-cond);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: rgba(245,184,0,0.4); color: var(--gold); }
+  .chip.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #000;
+  }
+  .filter-divider { width: 1px; height: 20px; background: var(--border); }
+  .filter-search {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    padding: 6px 14px;
+    border-radius: 2px;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.2s;
+  }
+  .filter-search::placeholder { color: var(--text-muted); }
+  .filter-search:focus { border-color: rgba(245,184,0,0.4); }
+  .results-count {
+    margin-left: auto;
+    font-family: var(--font-cond);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.25rem;
+  }
+
+  /* ── PARTY CARD ── */
+  .party-card {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .party-card:hover {
+    border-color: rgba(245,184,0,0.35);
+    background: var(--dark3);
+    transform: translateY(-2px);
+  }
+  .party-card.hidden { display: none; }
+
+  .card-header {
+    padding: 1.25rem 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .badge {
+    font-family: var(--font-cond);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 1px;
+  }
+  .badge-featured { background: var(--gold); color: #000; }
+  .badge-free { background: rgba(100,200,100,0.15); color: #7DC77D; border: 1px solid rgba(100,200,100,0.3); }
+  .badge-ticketed { background: rgba(215,43,43,0.15); color: #E87070; border: 1px solid rgba(215,43,43,0.3); }
+  .badge-bar { background: rgba(245,184,0,0.1); color: #F5B800; border: 1px solid rgba(245,184,0,0.25); }
+  .badge-rooftop { background: rgba(100,160,220,0.1); color: #80AEDE; border: 1px solid rgba(100,160,220,0.25); }
+  .badge-outdoor { background: rgba(100,200,120,0.1); color: #7ABFAA; border: 1px solid rgba(100,200,120,0.25); }
+  .badge-family { background: rgba(200,150,220,0.1); color: #C9A0DC; border: 1px solid rgba(200,150,220,0.25); }
+  .badge-sports-bar { background: rgba(215,43,43,0.1); color: #E87070; border: 1px solid rgba(215,43,43,0.25); }
+  .badge-restaurant { background: rgba(255,160,80,0.1); color: #FFB366; border: 1px solid rgba(255,160,80,0.25); }
+
+  .card-time-badge {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    background: var(--dark4);
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+  }
+
+  .card-body { padding: 1rem 1.25rem; flex: 1; }
+  .card-name {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+  .card-venue {
+    font-family: var(--font-cond);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .card-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .meta-item {
+    display: flex; align-items: flex-start; gap: 7px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .meta-item svg { flex-shrink: 0; margin-top: 2px; color: var(--text-muted); }
+  .meta-item strong { color: var(--text); font-weight: 500; display: block; font-size: 0.8rem; }
+
+  .card-footer {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .card-btn {
+    flex: 1;
+    font-family: var(--font-cond);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: all 0.15s;
+  }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: #B52222; }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .btn-secondary:hover { border-color: rgba(245,184,0,0.4); color: var(--gold); }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(12px);
+    transition: transform 0.2s;
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal-head {
+    padding: 1.5rem 1.5rem 0;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .modal-title { font-family: var(--font-display); font-size: 2.2rem; line-height: 1; }
+  .modal-venue { font-family: var(--font-cond); font-size: 1rem; color: var(--gold); font-weight: 600; }
+  .modal-close {
+    background: var(--dark4); border: 1px solid var(--border);
+    color: var(--text-muted); border-radius: 2px;
+    width: 32px; height: 32px; font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 4px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .modal-close:hover { border-color: var(--red); color: var(--red); }
+  .modal-body { padding: 0 1.5rem 1.5rem; }
+  .modal-section { margin-bottom: 1.5rem; }
+  .modal-section-title {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .detail-block label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+  .detail-block p { font-size: 0.9rem; color: var(--text); }
+  .detail-block a { color: var(--gold); text-decoration: none; }
+  .detail-block a:hover { text-decoration: underline; }
+  .food-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .food-tag {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+  .modal-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .modal-btn {
+    flex: 1; padding: 12px; text-align: center;
+    font-family: var(--font-cond); font-size: 0.85rem;
+    font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    border-radius: 2px; cursor: pointer; text-decoration: none;
+    border: none; transition: all 0.15s;
+  }
+  .modal-btn-primary { background: var(--red); color: #fff; }
+  .modal-btn-primary:hover { background: #B52222; }
+  .modal-btn-secondary { background: var(--dark3); border: 1px solid var(--border); color: var(--text-muted); }
+  .modal-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── SUBMIT FORM SECTION ── */
+  .submit-section {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem;
+    margin: 3rem 0;
+  }
+  .submit-inner { max-width: 700px; margin: 0 auto; }
+  .submit-inner .section-title { margin-bottom: 0.5rem; }
+  .submit-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label {
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--text-muted); }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: rgba(245,184,0,0.5); }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-group select option { background: var(--dark3); }
+  .form-submit {
+    width: 100%; margin-top: 1.5rem;
+    background: var(--red); color: #fff;
+    font-family: var(--font-cond); font-size: 1rem;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    border: none; border-radius: 2px; padding: 14px;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .form-submit:hover { background: #B52222; }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+    background: rgba(100,200,100,0.08);
+    border: 1px solid rgba(100,200,100,0.25);
+    border-radius: 4px;
+  }
+  .form-success.show { display: block; }
+  .form-success h3 { font-family: var(--font-display); font-size: 2rem; color: #7DC77D; margin-bottom: 0.5rem; }
+  .form-success p { color: var(--text-muted); font-size: 0.9rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  footer strong { color: var(--gold); }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    display: none; grid-column: 1 / -1;
+    padding: 5rem 2rem; text-align: center;
+  }
+  .empty-state.show { display: block; }
+  .empty-state h3 { font-family: var(--font-display); font-size: 2.5rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .empty-state p { color: var(--text-muted); font-size: 0.9rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .nav-links { display: none; }
+    .modal-detail-grid { grid-template-columns: 1fr; }
+    .filters-inner { gap: 0.75rem; }
+    .results-count { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><em>LA</em> WATCH PARTIES</a>
+  <div class="nav-links">
+    <a href="#events">Events</a>
+    <a href="#submit">Add Yours</a>
+    <a href="#faq">Info</a>
+  </div>
+  <a class="nav-submit" href="#submit">+ Submit Event</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span> World Cup 2026 · Los Angeles</div>
+    <h1>WATCH<br><em>PARTY</em><br>HUB</h1>
+    <p class="hero-sub">The best bars, venues & events in LA</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong id="event-count">12</strong><span>Events Listed</span></div>
+      <div class="hero-stat"><strong>15+</strong><span>Neighborhoods</span></div>
+      <div class="hero-stat"><strong>64</strong><span>Matches</span></div>
+    </div>
+    <a class="hero-cta" href="#events">Browse All Events →</a>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filters-bar" id="events">
+  <div class="filters-inner">
+    <span class="filter-label">Type</span>
+    <div class="filter-chips" id="type-filters">
+      <button class="chip active" data-filter="type" data-value="all">All</button>
+      <button class="chip" data-filter="type" data-value="bar">Bar</button>
+      <button class="chip" data-filter="type" data-value="rooftop">Rooftop</button>
+      <button class="chip" data-filter="type" data-value="outdoor">Outdoor</button>
+      <button class="chip" data-filter="type" data-value="restaurant">Restaurant</button>
+      <button class="chip" data-filter="type" data-value="sports-bar">Sports Bar</button>
+      <button class="chip" data-filter="type" data-value="family">Family Friendly</button>
+    </div>
+    <div class="filter-divider"></div>
+    <span class="filter-label">Cost</span>
+    <div class="filter-chips" id="cost-filters">
+      <button class="chip active" data-filter="cost" data-value="all">All</button>
+      <button class="chip" data-filter="cost" data-value="free">Free Entry</button>
+      <button class="chip" data-filter="cost" data-value="ticketed">Ticketed</button>
+    </div>
+    <div class="filter-divider"></div>
+    <input class="filter-search" type="text" id="search-input" placeholder="Search by name or area…">
+    <span class="results-count" id="results-count">12 results</span>
+  </div>
+</div>
+
+<!-- CARDS SECTION -->
+<div class="section">
+  <div class="cards-grid" id="cards-grid">
+    <div class="empty-state" id="empty-state">
+      <h3>No matches found</h3>
+      <p>Try adjusting your filters or search term.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT SECTION -->
+<div class="submit-section" id="submit">
+  <div class="submit-inner">
+    <div class="section-label">List your event</div>
+    <h2 class="section-title">ADD YOUR PARTY</h2>
+    <p class="submit-desc">Running a World Cup watch party in LA? Get it in front of thousands of fans. Fill out the form below and we'll review and post it within 24 hours.</p>
+
+    <form class="form-grid" id="submit-form" novalidate>
+      <div class="form-group">
+        <label>Event / Party Name *</label>
+        <input type="text" placeholder="The Copa Cantina Watch Party" required>
+      </div>
+      <div class="form-group">
+        <label>Venue Name *</label>
+        <input type="text" placeholder="The Copa Cantina" required>
+      </div>
+      <div class="form-group full">
+        <label>Address *</label>
+        <input type="text" placeholder="1234 Sunset Blvd, Los Angeles, CA 90026" required>
+      </div>
+      <div class="form-group">
+        <label>Neighborhood</label>
+        <input type="text" placeholder="Silver Lake">
+      </div>
+      <div class="form-group">
+        <label>Event Type</label>
+        <select>
+          <option>Sports Bar</option>
+          <option>Bar</option>
+          <option>Rooftop</option>
+          <option>Outdoor</option>
+          <option>Restaurant</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Date(s)</label>
+        <input type="text" placeholder="June 11 – July 19, 2026">
+      </div>
+      <div class="form-group">
+        <label>Doors Open / Kickoff Time</label>
+        <input type="text" placeholder="Varies by match">
+      </div>
+      <div class="form-group">
+        <label>Entry Cost</label>
+        <input type="text" placeholder="Free / $10 cover / Ticketed">
+      </div>
+      <div class="form-group">
+        <label>Food Available?</label>
+        <input type="text" placeholder="Full menu, bar bites…">
+      </div>
+      <div class="form-group">
+        <label>Parking</label>
+        <input type="text" placeholder="Street parking, lot nearby…">
+      </div>
+      <div class="form-group full">
+        <label>Description</label>
+        <textarea placeholder="Tell us what makes your event special — screens, drinks specials, theme nights, live DJ…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Website / Tickets Link</label>
+        <input type="url" placeholder="https://…">
+      </div>
+      <div class="form-group">
+        <label>Your Contact Email</label>
+        <input type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group full">
+        <button type="submit" class="form-submit">Submit Event for Review →</button>
+      </div>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <h3>SUBMITTED!</h3>
+      <p>Thanks — we'll review your event and post it within 24 hours. Check back soon!</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>LA World Cup Watch Party Hub &nbsp;·&nbsp; <strong>World Cup 2026</strong> &nbsp;·&nbsp; Los Angeles, California</p>
+  <p style="margin-top:0.5rem">Know of a party we missed? <a href="#submit" style="color:var(--gold);text-decoration:none">Add it here →</a></p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-venue" id="modal-venue"></div>
+      </div>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Details</div>
+        <div class="modal-detail-grid">
+          <div class="detail-block"><label>Date</label><p id="m-date"></p></div>
+          <div class="detail-block"><label>Kickoff / Doors</label><p id="m-time"></p></div>
+          <div class="detail-block"><label>Entry</label><p id="m-cost"></p></div>
+          <div class="detail-block"><label>Neighborhood</label><p id="m-area"></p></div>
+          <div class="detail-block full" style="grid-column:1/-1"><label>Address</label><p><a id="m-address" href="#" target="_blank" rel="noopener"></a></p></div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">About</div>
+        <p id="m-desc" style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;"></p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Food &amp; Drink</div>
+        <div class="food-tags" id="m-food"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Parking</div>
+        <p id="m-parking" style="font-size:0.9rem;color:var(--text-muted);"></p>
+      </div>
+      <div class="modal-actions">
+        <a class="modal-btn modal-btn-primary" id="m-link" href="#" target="_blank" rel="noopener">Get Tickets / Info →</a>
+        <button class="modal-btn modal-btn-secondary" id="m-directions">Get Directions ↗</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PARTIES = [
+  {
+    id: 1,
+    name: "Copa House LA",
+    venue: "The Bungalow Santa Monica",
+    area: "Santa Monica",
+    address: "101 Wilshire Blvd, Santa Monica, CA 90401",
+    date: "All 64 Matches",
+    time: "Doors 1hr before kickoff",
+    cost: "Free Entry",
+    costType: "free",
+    type: ["bar","outdoor"],
+    desc: "Two massive outdoor screens, craft cocktails with a World Cup menu rotation, and beachside vibes. Every match shown live with commentary in English and Spanish.",
+    food: ["Tacos", "Sliders", "Churros", "Bucket Beers", "Cocktails", "Full Bar"],
+    parking: "Santa Monica Pier Lot (validated) and street parking on 2nd/3rd. Metro Expo Line stop nearby.",
+    link: "https://thebungalowsm.com",
+    featured: true
+  },
+  {
+    id: 2,
+    name: "Golazo Rooftop Party",
+    venue: "Perch LA",
+    area: "Downtown LA",
+    address: "448 S Hill St, Los Angeles, CA 90013",
+    date: "Group Stage + Knockouts",
+    time: "90 min before kickoff",
+    cost: "$20 cover (includes 1 drink)",
+    costType: "ticketed",
+    type: ["rooftop","bar"],
+    desc: "Downtown's most iconic rooftop transforms into the ultimate World Cup venue. Panoramic views of the LA skyline with 4K screens, DJ sets between matches, and a special Copa cocktail menu.",
+    food: ["Flatbreads", "Charcuterie", "Craft Cocktails", "Local Craft Beers", "Wine"],
+    parking: "Lot 645 on 5th St. Metro Red/Purple Line – Pershing Square Station.",
+    link: "https://perchla.com",
+    featured: true
+  },
+  {
+    id: 3,
+    name: "Soccer & Suds",
+    venue: "Tony's Darts Away",
+    area: "Burbank",
+    address: "1710 W Magnolia Blvd, Burbank, CA 91506",
+    date: "All Matches",
+    time: "Kickoff time",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","sports-bar"],
+    desc: "A Valley staple with all draught beers, 8 screens around the bar, and a laid-back neighborhood vibe. First come, first served — arrive 30 min early for the big games.",
+    food: ["Sausages", "Pretzels", "Drafts", "Guest Taps"],
+    parking: "Free street parking on Magnolia Blvd and surrounding side streets.",
+    link: "https://tonysdartsaway.com",
+    featured: false
+  },
+  {
+    id: 4,
+    name: "Ultras Koreatown",
+    venue: "Break Room 86",
+    area: "Koreatown",
+    address: "3939 W 6th St, Los Angeles, CA 90020",
+    date: "Group Stage",
+    time: "Match Kickoff",
+    cost: "$15 cover",
+    costType: "ticketed",
+    type: ["bar","sports-bar"],
+    desc: "K-town's wildest watch party. Expect packed crowds, group chants, and nonstop energy. Known for the best atmosphere in the city. Limited capacity — grab your ticket early.",
+    food: ["Korean BBQ Bites", "Soju Cocktails", "Beer Towers", "Fried Chicken"],
+    parking: "K-Town has dense street parking. Recommend taking Metro Purple Line to Wilshire/Vermont.",
+    link: "https://breakroom86.com",
+    featured: false
+  },
+  {
+    id: 5,
+    name: "World Cup Family Fanzone",
+    venue: "Grand Park LA",
+    area: "Downtown LA",
+    address: "200 N Grand Ave, Los Angeles, CA 90012",
+    date: "Select Weekends",
+    time: "2hr before kickoff",
+    cost: "Free",
+    costType: "free",
+    type: ["outdoor","family"],
+    desc: "LA's ultimate family-friendly watch party. Giant LED screen, face painting, bounce houses, food trucks, and the electric energy of watching together as a city. All ages welcome.",
+    food: ["Food Trucks", "Ice Cream", "Agua Fresca", "Soft Drinks", "Coffee"],
+    parking: "Disney Hall Garage ($15). Metro Red/Purple Line – Civic Center Station.",
+    link: "https://grandparkla.org",
+    featured: true
+  },
+  {
+    id: 6,
+    name: "El Partido",
+    venue: "La Cuevita",
+    area: "Highland Park",
+    address: "5922 N Figueroa St, Los Angeles, CA 90042",
+    date: "All Mexican & US Team Matches",
+    time: "1hr before kickoff",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","restaurant"],
+    desc: "The heartbeat of Highland Park football culture. The most passionate Mexica fan base outside the actual stadium, with mezcal, micheladas, and legendary atmosphere. Expect standing room only for El Tri games.",
+    food: ["Tacos", "Micheladas", "Mezcal", "Elotes", "Tortas"],
+    parking: "Street parking on Figueroa. Gold Line – Highland Park Station is 5 min walk.",
+    link: "https://lacuevita.com",
+    featured: false
+  },
+  {
+    id: 7,
+    name: "Screens & Steins",
+    venue: "Verdugo Bar",
+    area: "Glassell Park",
+    address: "3408 Verdugo Rd, Los Angeles, CA 90065",
+    date: "All Matches",
+    time: "Match time",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","outdoor"],
+    desc: "Indie bar gem with a huge backyard, string lights, and an unpretentious crowd. 3 screens. Great craft beers on tap. Cash only. One of the best spots for a laid-back group watch.",
+    food: ["Bar Snacks", "Craft Beers", "Wine", "Non-Alcoholic Options"],
+    parking: "Street parking available. Short drive from the 2 and 134 freeways.",
+    link: "https://verdugobar.com",
+    featured: false
+  },
+  {
+    id: 8,
+    name: "Copa Cantina Westside",
+    venue: "The Brig Venice",
+    area: "Venice",
+    address: "1515 Abbot Kinney Blvd, Venice, CA 90291",
+    date: "All Matches",
+    time: "Kickoff",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","sports-bar"],
+    desc: "Abbot Kinney's beloved neighborhood bar goes full football mode. Back patio opens for overflow crowds, with multiple screens and a rotating menu of match-day specials.",
+    food: ["Bar Bites", "Burgers", "Craft Beers", "Cocktails"],
+    parking: "Street parking on Abbot Kinney. Paid lot on Brooks Ave.",
+    link: "https://thebrigvenice.com",
+    featured: false
+  },
+  {
+    id: 9,
+    name: "Galaxy Fan Club Watch",
+    venue: "Tom's Urban DTLA",
+    area: "Downtown LA",
+    address: "800 W Olympic Blvd, Los Angeles, CA 90015",
+    date: "All USA Matches + Knockouts",
+    time: "2hr before kickoff",
+    cost: "$25 (includes food & drink credits)",
+    costType: "ticketed",
+    type: ["bar","sports-bar","restaurant"],
+    desc: "Official partner venue for the LA Galaxy Fan Club. Inside LA Live — the perfect pregame for match days. Huge screens, DJ, drink specials, and a connected energy to the whole LA Live district.",
+    food: ["American Grill", "Shared Plates", "Full Bar", "Cocktails", "Sports Brews"],
+    parking: "LA Live Parking Structure – discounted for events. $15–20.",
+    link: "https://tomsurban.com",
+    featured: false
+  },
+  {
+    id: 10,
+    name: "Los Feliz Football Club",
+    venue: "The Dresden",
+    area: "Los Feliz",
+    address: "1760 N Vermont Ave, Los Angeles, CA 90027",
+    date: "All Matches",
+    time: "Kickoff",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","restaurant"],
+    desc: "Iconic Los Feliz haunt turns the lounge into a watch party zone for every match. Cult-favorite cocktails, mellow crowd, and a perfectly vintage LA atmosphere.",
+    food: ["Classic American", "Cocktails", "Wine", "Full Bar"],
+    parking: "Street parking on Vermont and Los Feliz Blvd.",
+    link: "https://thedresden.com",
+    featured: false
+  },
+  {
+    id: 11,
+    name: "Hollywood Hills Watch Party",
+    venue: "Yamashiro Hollywood",
+    area: "Hollywood Hills",
+    address: "1999 N Sycamore Ave, Los Angeles, CA 90068",
+    date: "Select Knockout Matches",
+    time: "1.5hr before kickoff",
+    cost: "$40 (reserved seating)",
+    costType: "ticketed",
+    type: ["rooftop","outdoor","restaurant"],
+    desc: "A once-in-a-lifetime watch experience in a historic pagoda-style venue with panoramic views of Hollywood and the LA basin. Limited seating — the most exclusive watch party on this list.",
+    food: ["Asian Fusion", "Sushi", "Cocktail Menu", "Champagne", "Full Dinner Service"],
+    parking: "Valet available on-site ($15). Lyft/Uber strongly recommended.",
+    link: "https://yamashirohollywood.com",
+    featured: true
+  },
+  {
+    id: 12,
+    name: "South Bay Supporters",
+    venue: "Naja's Place",
+    area: "Redondo Beach",
+    address: "154 International Boardwalk, Redondo Beach, CA 90277",
+    date: "All Matches",
+    time: "Kickoff",
+    cost: "Free",
+    costType: "free",
+    type: ["bar","sports-bar","outdoor"],
+    desc: "Right on the Redondo Beach boardwalk — watch the world's game with your feet in the sand. 50+ beers on tap, outdoor patio screens, and the best salty air atmosphere on the Westside.",
+    food: ["Fish & Chips", "Boardwalk Bites", "50+ Beers on Tap", "Cocktails"],
+    parking: "Redondo Beach Pier parking lots ($2–5/hr). Beachfront stalls fill fast for big matches.",
+    link: "https://najasplace.com",
+    featured: false
+  }
+];
+
+let activeTypeFilter = 'all';
+let activeCostFilter = 'all';
+let searchQuery = '';
+
+function typeIcons(types) {
+  const map = {
+    bar: 'badge-bar',
+    rooftop: 'badge-rooftop',
+    outdoor: 'badge-outdoor',
+    family: 'badge-family',
+    restaurant: 'badge-restaurant',
+    'sports-bar': 'badge-sports-bar'
+  };
+  const labels = {
+    bar: 'Bar', rooftop: 'Rooftop', outdoor: 'Outdoor',
+    family: 'Family', restaurant: 'Restaurant', 'sports-bar': 'Sports Bar'
+  };
+  return types.slice(0,2).map(t => `<span class="badge ${map[t]||'badge-bar'}">${labels[t]||t}</span>`).join('');
+}
+
+function renderCards() {
+  const grid = document.getElementById('cards-grid');
+  const empty = document.getElementById('empty-state');
+  const allCards = grid.querySelectorAll('.party-card');
+  allCards.forEach(c => c.remove());
+
+  const filtered = PARTIES.filter(p => {
+    const typeMatch = activeTypeFilter === 'all' || p.type.includes(activeTypeFilter);
+    const costMatch = activeCostFilter === 'all' || p.costType === activeCostFilter;
+    const q = searchQuery.toLowerCase();
+    const searchMatch = !q || p.name.toLowerCase().includes(q) || p.venue.toLowerCase().includes(q) || p.area.toLowerCase().includes(q);
+    return typeMatch && costMatch && searchMatch;
+  });
+
+  document.getElementById('results-count').textContent = `${filtered.length} result${filtered.length!==1?'s':''}`;
+  document.getElementById('event-count').textContent = PARTIES.length;
+
+  if (filtered.length === 0) {
+    empty.classList.add('show');
+    grid.appendChild(empty);
+    return;
+  }
+  empty.classList.remove('show');
+  grid.appendChild(empty);
+
+  filtered.sort((a,b) => b.featured - a.featured);
+
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'party-card';
+    card.dataset.id = p.id;
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-badges">
+          ${p.featured ? '<span class="badge badge-featured">★ Featured</span>' : ''}
+          ${typeIcons(p.type)}
+          <span class="badge ${p.costType==='free'?'badge-free':'badge-ticketed'}">${p.costType==='free'?'Free':'Ticketed'}</span>
+        </div>
+        <span class="card-time-badge">${p.area}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-venue">${p.venue}</div>
+        <div class="card-desc">${p.desc.substring(0,130)}…</div>
+        <div class="card-meta">
+          <div class="meta-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <div><strong>${p.date}</strong></div>
+          </div>
+          <div class="meta-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div><strong>${p.time}</strong></div>
+          </div>
+          <div class="meta-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div><strong>${p.address.split(',')[0]}</strong></div>
+          </div>
+          <div class="meta-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            <div><strong>${p.cost}</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn btn-primary">View Details →</button>
+        <a class="card-btn btn-secondary" href="${p.link}" target="_blank" rel="noopener">Website ↗</a>
+      </div>
+    `;
+    card.querySelector('.btn-primary').addEventListener('click', () => openModal(p));
+    grid.appendChild(card);
+  });
+}
+
+// FILTERS
+document.querySelectorAll('[data-filter="type"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter="type"]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTypeFilter = btn.dataset.value;
+    renderCards();
+  });
+});
+document.querySelectorAll('[data-filter="cost"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter="cost"]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCostFilter = btn.dataset.value;
+    renderCards();
+  });
+});
+document.getElementById('search-input').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  renderCards();
+});
+
+// MODAL
+function openModal(p) {
+  document.getElementById('modal-title').textContent = p.name;
+  document.getElementById('modal-venue').textContent = p.venue;
+  document.getElementById('m-date').textContent = p.date;
+  document.getElementById('m-time').textContent = p.time;
+  document.getElementById('m-cost').textContent = p.cost;
+  document.getElementById('m-area').textContent = p.area;
+  const addrEl = document.getElementById('m-address');
+  addrEl.textContent = p.address;
+  addrEl.href = `https://maps.google.com?q=${encodeURIComponent(p.address)}`;
+  document.getElementById('m-desc').textContent = p.desc;
+  const foodEl = document.getElementById('m-food');
+  foodEl.innerHTML = p.food.map(f => `<span class="food-tag">${f}</span>`).join('');
+  document.getElementById('m-parking').textContent = p.parking;
+  document.getElementById('m-link').href = p.link;
+  document.getElementById('m-directions').onclick = () => window.open(`https://maps.google.com?q=${encodeURIComponent(p.address)}`,'_blank');
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+});
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// SUBMIT FORM
+document.getElementById('submit-form').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('submit-form').style.display = 'none';
+  document.getElementById('form-success').classList.add('show');
+});
+
+renderCards();
+</script>
+</body>
+</html>
